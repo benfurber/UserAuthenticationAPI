@@ -17,7 +17,7 @@ after_bundle do
   rails_command 'db:create'
   rails_command 'db:migrate'
 
-  get :init
+  git :init
   git add: '.'
   git commit: %Q{ -m 'Complete basic Rails setup' }
 end
