@@ -1,18 +1,24 @@
-## UserAuthenticationAPI
+# README
 
-A little project to learn more about building APIs and user authentication.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-### Learning objectives
+Things you may want to cover:
 
-* Practice writing ES6 callbacks and Promises
-* Practice testing Promises
-* Practice writing JS class objects
-* Fundamentals of GraphQL
-* Discover and apply more user authentication functions
+* Ruby version
 
-### Basic structure of plan
+* System dependencies
 
-* Document, test and build some basic Promises
-* Apply Promises to real user authentication scenario
-* Build a GraphQL model on top of those Promises
-* Deploy and call the API from separate server
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
