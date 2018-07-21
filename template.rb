@@ -12,12 +12,12 @@ gem 'graphql'
 run 'bundle install'
 
 after_bundle do
-  rails generate rspec:install
+  rails_command 'generate rspec:install'
 
-  rails_command "db:create"
-  rails_command "db:migrate"
+  rails_command 'db:create'
+  rails_command 'db:migrate'
 
   get :init
-  git add: "."
+  git add: '.'
   git commit: %Q{ -m 'Complete basic Rails setup' }
 end
