@@ -11,3 +11,5 @@ AllCops:
   Exclude:
     - db/schema.rb
     - bin/*
+Style/FrozenStringLiteralComment:
+  Enabled: false
