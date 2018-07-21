@@ -1,15 +1,14 @@
 # Suggested command for rails add
 # > rails new . --template='./template.rb' --database=postgresql
 
-def add_gems
-  gem 'rspec-rails' --group "development,test"
-  gem 'shoulda' --group "development,test"
+gem_group :development, :test do
+  gem 'rspec-rails'
+  gem 'shoulda'
   gem 'rubocop', require: false
-  gem 'graphql', '1.7.4'
 end
 
-# Main commands
-add_gems
+gem 'graphql'
+
 bundle install
 
 after_bundle do
