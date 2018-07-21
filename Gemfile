@@ -65,6 +65,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda'
   gem 'rubocop', require: false
+  gem 'rubocop-rspec'
 end
 
 gem 'graphql'
