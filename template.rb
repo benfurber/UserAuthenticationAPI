@@ -9,7 +9,7 @@ end
 
 gem 'graphql'
 
-bundle install
+run 'bundle install'
 
 after_bundle do
   rails generate rspec:install
