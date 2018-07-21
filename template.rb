@@ -13,9 +13,12 @@ run 'bundle install'
 
 after_bundle do
   rails_command 'generate rspec:install'
+  rails_command 'generate graphql:install'
 
   rails_command 'db:create'
   rails_command 'db:migrate'
+  
+  run 'bundle install'
 
   git :init
   git add: '.'

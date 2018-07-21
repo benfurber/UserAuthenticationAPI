@@ -68,3 +68,4 @@ group :development, :test do
 end
 
 gem 'graphql'
+gem 'graphiql-rails', group: :development
