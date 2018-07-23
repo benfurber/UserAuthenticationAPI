@@ -23,4 +23,9 @@ RSpec.describe Resolvers::CreateLink, type: :model do
     link
     expect(link.description).to eq test_description
   end
+
+  it 'can creat a new link that persists' do
+    link
+    expect(link.persisted?).to be true
+  end
 end
