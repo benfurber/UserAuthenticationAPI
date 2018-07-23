@@ -5,6 +5,8 @@ gem_group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda'
   gem 'rubocop', require: false
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
 end
 
 gem 'graphql'
@@ -17,7 +19,7 @@ after_bundle do
 
   rails_command 'db:create'
   rails_command 'db:migrate'
-  
+
   run 'bundle install'
 
   git :init

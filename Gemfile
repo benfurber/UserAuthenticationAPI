@@ -63,9 +63,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'shoulda'
   gem 'rubocop', require: false
+  gem 'shoulda'
   gem 'rubocop-rspec'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
 end
 
 gem 'graphql'
