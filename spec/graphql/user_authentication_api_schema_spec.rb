@@ -1,18 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe UserAuthenticationAPISchema do
-  let(:context) { {} }
-  let(:variables) { {} }
-  let(:result) {
-    res = UserAuthenticationAPISchema.execute(
-      query_string,
-      context: context,
-      variables: variables
-    )
-    p res if res['errors']
-    res
-  }
-
   let(:link_url) { 'http://www.facebook.com' }
   let(:link_description) { 'Facebook' }
 
@@ -20,14 +8,35 @@ RSpec.describe UserAuthenticationAPISchema do
     Link.create(url: link_url, description: link_description)
   end
 
-  describe 'a specific query' do
+  describe 'allLinks' do
     let(:query_model) { 'allLinks' }
-    let(:query_content) { 'url' }
-    let(:query_string) { %|{ #{query_model} { #{query_content} } }| }
-    let(:query_result) { result.as_json['data'][query_model] }
 
-    it 'returns a result?' do
-      expect(query_result).to include({ query_content => link_url })
+    it 'returns URLs' do
+      query_content = 'id'
+      query_string = %({ #{query_model} { #{query_content} } })
+      result = described_class.execute(query_string)
+
+      expect(result.as_json['data'][query_model]).not_to be_empty
+    end
+
+    it 'returns URLs' do
+      query_content = 'url'
+      query_string = %({ #{query_model} { #{query_content} } })
+      result = described_class.execute(query_string)
+
+      expect(result.as_json['data'][query_model]).to include(
+        query_content => link_url
+      )
+    end
+
+    it 'returns descriptions' do
+      query_content = 'description'
+      query_string = %({ #{query_model} { #{query_content} } })
+      result = described_class.execute(query_string)
+
+      expect(result.as_json['data'][query_model]).to include(
+        query_content => link_description
+      )
     end
   end
 end
