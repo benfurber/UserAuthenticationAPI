@@ -11,7 +11,7 @@ RSpec.describe UserAuthenticationAPISchema do
   describe 'allLinks' do
     let(:query_model) { 'allLinks' }
 
-    it 'returns URLs' do
+    it 'returns ID' do
       query_content = 'id'
       query_string = %({ #{query_model} { #{query_content} } })
       result = described_class.execute(query_string)
